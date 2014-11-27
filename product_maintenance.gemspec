@@ -7,16 +7,22 @@ require "product_maintenance/version"
 Gem::Specification.new do |s|
   s.name        = "product_maintenance"
   s.version     = ProductMaintenance::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ProductMaintenance."
-  s.description = "TODO: Description of ProductMaintenance."
+  s.authors     = ['Joan Tiffany Siy']
+  s.email       = ['joan@teamcodeflux.com']
+  s.homepage    = 'https://github.com/jotiffany/product_maintenance'
+  s.summary     = "Product Maintenance Rails Engine."
+  s.description = "Module for Product CRUD"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 4.1.8"
+  s.add_dependency 'pg', '~> 0.17.1'
 
-  s.add_development_dependency "sqlite3"
+  s.add_dependency 'sass-rails', '~> 4.0.4'
+  s.add_dependency 'coffee-rails', '~> 4.1.0'
+  s.add_dependency 'jquery-rails', '~> 3.1.2'
+  s.add_dependency 'haml-rails', '~> 0.5.3'
+  s.add_dependency 'simple_form', '~> 3.1.0.rc2'
+  s.add_dependency 'jbuilder', '~> 2.2.5'
 end
