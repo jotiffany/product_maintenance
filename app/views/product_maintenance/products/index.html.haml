@@ -1,0 +1,26 @@
+%h1 Listing products
+
+%table
+  %thead
+    %tr
+      %th Code
+      %th Desc
+      %th Subtype
+      %th Category code
+      %th Effective date
+      %th Expiration date
+      %th Current Price
+  %tbody
+    - @products.each do |product|
+      %tr
+        %td= link_to product.code, product_path(product)
+        %td= product.desc
+        %td= product.subtype
+        %td= product.category_code
+        %td= product.effective_date
+        %td= product.expiration_date
+        %td= number_with_precision(product.current_price_amount, :precision => 2, :delimiter => ',')
+
+%br
+
+= link_to 'New Product', new_product_path

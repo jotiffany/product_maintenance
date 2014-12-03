@@ -1,0 +1,4 @@
+%h1= "New conversion factors for #{@product.code}'s base unit: #{@unit_of_measure.desc}"
+
+= simple_form_for @conversion_factor, :url => product_conversion_factors_path(@product), :html => { :class => 'form' } do |form|
+  = render 'form', :form => form, :cancel_url => product_path(@product)

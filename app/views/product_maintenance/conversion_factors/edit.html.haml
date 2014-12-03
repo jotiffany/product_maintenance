@@ -1,0 +1,4 @@
+%h1 Editing conversion factor
+
+= simple_form_for @conversion_factor, :url => product_conversion_factor_path(@product, @conversion_factor), :html => { :class => 'form' } do |form|
+  = render 'form', :form => form, :product => @product, :cancel_url => product_conversion_factors_path(@product)

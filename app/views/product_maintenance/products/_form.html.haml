@@ -1,0 +1,15 @@
+= form.input :code
+= form.input :desc
+= form.input :subtype
+= form.input :category_code
+= form.input :effective_date
+= form.input :expiration_date
+= form.input :comment
+
+.uom
+  %h3 Base Unit of Measure
+  = render 'product_maintenance/unit_of_measures/form', :form => form
+
+= form.button :submit
+\|
+= link_to 'Cancel', cancel_url

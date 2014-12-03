@@ -1,0 +1,25 @@
+%h1= "Listing conversion factors for #{@product.code}'s base unit: #{@unit_of_measure.desc}"
+
+%table
+  %thead
+    %tr
+      %th Abbreviation
+      %th Desc
+      %th Factor
+      %th Actions
+  %tbody
+    - @conversion_factors.each do |conversion_factor|
+      %tr
+        %td= conversion_factor.abbreviation
+        %td= conversion_factor.desc
+        %td= number_with_precision(conversion_factor.factor, :precision => 2, :delimiter => ',')
+        %td
+          = link_to "Edit", edit_product_conversion_factor_path(@product, conversion_factor)
+          \|
+          = link_to 'Destroy', product_conversion_factor_path(@product, conversion_factor), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Conversion Factor', new_product_conversion_factor_path(@product)
+\|
+= link_to 'Back', product_path(@product)

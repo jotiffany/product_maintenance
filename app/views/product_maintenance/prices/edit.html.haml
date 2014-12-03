@@ -1,0 +1,4 @@
+%h1 Editing Price
+
+= simple_form_for @price, :url => product_price_path(@product, @price), :html => { :class => 'form' } do |form|
+  = render 'form', :form => form, :product => @product, :cancel_url => product_path(@product)

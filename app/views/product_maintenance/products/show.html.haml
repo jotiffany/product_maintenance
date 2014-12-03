@@ -1,0 +1,49 @@
+%p#notice
+  = notice
+
+%dl
+  %dt Code:
+  %dd
+    = @product.code
+%dl
+  %dt Description:
+  %dd
+    = @product.desc
+%dl
+  %dt Subtype:
+  %dd
+    = @product.subtype
+%dl
+  %dt Category code:
+  %dd
+    = @product.category_code
+%dl
+  %dt Effective Date:
+  %dd
+    = @product.effective_date
+%dl
+  %dt Expiration Date:
+  %dd
+    = @product.expiration_date
+%dl
+  %dt Comment:
+  %dd
+    = @product.comment
+%dl
+  %dt Base Unit of Measure:
+  %dd
+    = "#{@product.base_unit.desc} (#{@product.base_unit.abbreviation})"
+    = link_to "View conversions", product_conversion_factors_path(@product)
+%dl
+  %dt
+    Prices:
+    \|
+    = link_to 'Add Price', new_product_price_path(@product)
+  %dd
+    = render 'product_maintenance/prices/table', :product => @product
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Destroy', product_path(@product), :method => :delete, :data => { :confirm => 'Are you sure?' }
+\|
+= link_to 'Back', products_path

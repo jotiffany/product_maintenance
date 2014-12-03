@@ -1,0 +1,4 @@
+%h1 Editing product
+
+= simple_form_for @product, :url => product_path(@product), :html => { :class => 'form' } do |form|
+  = render 'form', :form => form, :cancel_url => product_path(@product)

@@ -1,0 +1,15 @@
+%table
+  %thead
+    %tr
+      %th Effective Date
+      %th Amount
+      %th Actions
+  %tbody
+    - product.prices.order(:effective_date).each do |price|
+      %tr
+        %td= price.effective_date
+        %td= price.amount
+        %td
+          = link_to "Edit", edit_product_price_path(product, price)
+          \|
+          = link_to 'Destroy', product_price_path(product, price), :method => :delete, :data => { :confirm => 'Are you sure?' }
